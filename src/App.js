@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+//Please add your page imports below
+import Home from "./Home";
+import MainContainer from "./teacher-viewer-profile";
+import TeacherPage from "./TeacherPage";
+//Please add your page imports above
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProjectsLibrary from "./Components/ProjectsLibrary/ProjectLibrary";
+
+export default function App() {
+	return (
+		<div className="App">
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/teacher" element={<TeacherPage />} />
+					<Route path="/teacherViewer" element={<MainContainer />} />
+					<Route path="/projectlibrary" element={<ProjectsLibrary />} />
+				</Routes>
+			</Router>
+		</div>
+	);
 }
-
-export default App;
